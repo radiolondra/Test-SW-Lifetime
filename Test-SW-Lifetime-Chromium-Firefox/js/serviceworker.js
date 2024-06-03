@@ -36,32 +36,18 @@ const starter = `-------- >>> ${convertNoDate(Date.now())} UTC - Service Worker 
 console.log(starter);
 start();
 
-//chrome.alarms.onAlarm.addListener( function(alarm) {
-//    console.log("Got alarm:", alarm.name)
-//    if (alarm.name === "HLAlarm") {
-//        updateJobs();
-////        const notification = {
-////            type: "basic",
-////            iconUrl: "/ui/assets/images/eye-48.png",
-////            title: "SW Lifetime",
-////            message: "Service Worker is alive"
-////        };
-////        chrome.notifications.create(notification);
-//    }
-//});
-
 //#region INSTALL EXT LISTENER
 chrome.runtime.onInstalled.addListener((details) => {
 
     async () => await initialize();
     
     switch (details.reason) {
-        case chrome.runtime.OnInstalledReason.INSTALL:
+        case "install":
             console.log("This runs when the extension is newly installed.");
             start();
         break;
 
-        case chrome.runtime.OnInstalledReason.UPDATE:
+        case "update":
             console.log("This runs when an extension is updated.");
             start();
         break;

@@ -36,32 +36,18 @@ const starter = `-------- >>> ${convertNoDate(Date.now())} UTC - Service Worker 
 console.log(starter);
 start();
 
-//chrome.alarms.onAlarm.addListener( function(alarm) {
-//    console.log("Got alarm:", alarm.name)
-//    if (alarm.name === "HLAlarm") {
-//        updateJobs();
-////        const notification = {
-////            type: "basic",
-////            iconUrl: "/ui/assets/images/eye-48.png",
-////            title: "SW Lifetime",
-////            message: "Service Worker is alive"
-////        };
-////        chrome.notifications.create(notification);
-//    }
-//});
-
 //#region INSTALL EXT LISTENER
 chrome.runtime.onInstalled.addListener((details) => {
 
     async () => await initialize();
     
     switch (details.reason) {
-        case chrome.runtime.OnInstalledReason.INSTALL:
+        case "install":
             console.log("This runs when the extension is newly installed.");
             start();
         break;
 
-        case chrome.runtime.OnInstalledReason.UPDATE:
+        case "update":
             console.log("This runs when an extension is updated.");
             start();
         break;
@@ -100,12 +86,12 @@ chrome.runtime.onMessage.addListener( (request, sender, sendResponse) => {
 
 // Clears the Highlander interval when browser closes.
 // This allows the process associated with the extension to be removed.
-// Normally the process associated with the extension once the host browser is closed
+// Normally the process associated with the extension once the host browser is closed 
 // will be removed after about 30 seconds at maximum (from Chromium 110 up, before was 5 minutes).
-// If the browser is reopened before the system has removed the (pending) process,
+// If the browser is reopened before the system has removed the (pending) process, 
 // Highlander will be restarted in the same process which will be not removed anymore.
 chrome.windows.onRemoved.addListener( (windowId) => {
-    wCounter--;
+    wCounter--;          
     if (wCounter > 0) {
         return;
     }
@@ -116,8 +102,8 @@ chrome.windows.onRemoved.addListener( (windowId) => {
     // Shutting down Highlander will allow the system to remove the pending process associated with
     // the extension in max. 30 seconds (from Chromium 110 up, before was 5 minutes).
     if (wakeup !== undefined) {
-        // If browser will be open before the process associated to this extension is removed,
-        // setting this to false will allow a new call to letsStart() if needed
+        // If browser will be open before the process associated to this extension is removed, 
+        // setting this to false will allow a new call to letsStart() if needed 
         // ( see windows.onCreated listener )
         isAlreadyAwake = false;
 
@@ -205,7 +191,7 @@ function startHighlander() {
 // ---------------------------
 // HIGHLANDER FUNCTIONS
 // ---------------------------
-async function Highlander() {
+async function Highlander() {    
 
     const now = Date.now();
     const age = now - firstCall;
@@ -233,15 +219,15 @@ async function Highlander() {
                     
         alivePort.postMessage({content: "ping"});
         
-        if (chrome.runtime.lastError) {
-            if (DEBUG) console.log(`(DEBUG Highlander): postMessage error: ${chrome.runtime.lastError.message}`)
-        } else {
+        if (chrome.runtime.lastError) {                              
+            if (DEBUG) console.log(`(DEBUG Highlander): postMessage error: ${chrome.runtime.lastError.message}`)                
+        } else {                               
             if (DEBUG) console.log(`(DEBUG Highlander): "ping" sent through ${alivePort.name} port`)
-        }
-    }
+        }            
+    }         
       
-    if (isFirstStart) {
-        isFirstStart = false;
+    if (isFirstStart) { 
+        isFirstStart = false;        
         setTimeout( () => {
             nextRound();
         }, 100);
@@ -257,7 +243,6 @@ function convertNoDate(long) {
 function nextRound() {
     clearInterval(wakeup);
     timer = nextSeconds*SECONDS;
-    wakeup = setInterval(Highlander, timer);
+    wakeup = setInterval(Highlander, timer);    
 }
 //#endregion
-
