@@ -42,6 +42,3 @@ $('#isswalive').click(function(e) {
     checkWorkerLives();
 });
 
-$('#resumesw').click(function(e) {
-    resumeDeadWorker();
-});
