@@ -1,0 +1,399 @@
+html {
+    font-size: 16px;
+    
+    /*
+    border-width: 0;
+    border-style: hidden;
+    */
+    outline: none !important;
+    
+}
+
+html, body
+{
+    width: 400px;
+    height: 600px;
+    /* min-width: 21.87rem; /*350px;*/
+    /* height: 28.98rem; /*463px;*/
+
+    /* background: linear-gradient(#0b0737, #4047f2); */
+    background-color: #0b0737;
+    padding: 0;
+    overflow: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    
+    /*
+    border-width: 0;
+    border-style: hidden;
+    */
+    outline: none !important;
+}
+
+.hiddenoverflow {
+	overflow: hidden;
+}
+
+.autooverflow {
+	overflow: auto;
+}
+
+main > .container {
+    padding: 100px 15px 0;
+}
+
+.min-safe-h-screen {
+    /* equivalent to 100dvh in major browsers */
+    /* min-height: calc(
+        100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
+    ); */   
+    height: 100%;
+}
+
+@supports (-webkit-touch-callout: none) {
+    .min-safe-h-screen {
+      /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+      min-height: -webkit-fill-available;
+      /* max-height: 100vh; */
+    }
+}
+
+p {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 0.875rem;
+}
+
+#hostlabel {
+    background-color: #04012c;
+    color:#00aaff;
+}
+#navcol-5 {
+    font-size: 0.875rem;
+    padding: 5px 0px;
+    background-color: #04012c;
+}
+.swenabled {
+    color: rgb(5, 201, 5);
+}
+
+.swdisabled {
+    color: red;
+}
+
+.cursorpointer {
+    cursor: pointer;
+}
+
+.activesection {
+    display:block;
+}
+
+.disabledsection {
+    display:none;
+}
+
+.class14 {
+    font-size: 0.875rem;
+}
+
+.overviewDesc {
+    --bs-text-opacity: .8;
+}
+
+.navbarmain {
+    background-color: #0b0737;
+}
+
+.footerback {
+    background-color: rgb(217,208,15);
+}
+
+.footerText {
+    color:#0b0737;
+    font-weight: bold;
+}
+
+.navbar-nav > .nav-item > .nav-link.active {
+    color:rgb(255,245,15) !important;
+    font-size: 1.2rem; /* >16px; at 16px in root */
+}
+
+.navbar-nav > .nav-item > .nav-link:not(.active) {
+    font-size: 0.875rem; /* 14px; at 16px in root */
+}
+
+.navbar-nav > .nav-item > .nav-link:not(.active):hover {
+    color:rgb(217,208,15);
+}
+
+.nav-tabs > .nav-item > .nav-link:not(.active) {
+    color:rgb(255,245,15) !important;
+    font-size: 0.75rem; /* 12px; at 16px in root */
+    font-weight: normal;
+    font-style: italic;
+}
+
+.nav-tabs > .nav-item > .nav-link.active {
+    color: #0066cc !important;
+    font-size: 0.875rem; /* 14px; at 16px in root */
+    font-weight: bold;
+    font-style: normal;
+    background: #e7f1ff;
+}
+
+.accordion {
+    background: #e7f1ff;
+}
+
+.list-group {
+    background-color: white;
+    margin-bottom: 0.625rem; /*10px;*/
+    font-size:small;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-group-item {
+    cursor:pointer;
+}
+
+.whitelist_h {
+    /*height: 13.75rem; /*220px;*/
+    height: 300px;
+    padding: 0;
+}
+
+
+/*input, textarea {*/
+/*    -webkit-user-select: text;*/
+/*    -khtml-user-select: text;*/
+/*    -moz-user-select: text;*/
+/*    -ms-user-select: text;*/
+/*    user-select: text;*/
+/*}*/
+
+.accoslide {
+    /*max-height: 100px;*/
+    overflow-y: auto !important;
+    /* background-color: white; */
+    --bs-accordion-color: #0066cc !important;
+    --bs-accordion-bg: #e7f1ff !important;
+    height: 325px;
+    font-size:small;
+    -webkit-overflow-scrolling: touch;
+    /* margin-bottom: 10px; */
+}
+
+.accordion-body {
+    background-color: #f2f3f5 !important;
+}
+
+.accordion-button {
+    /* display: block; */
+    /* text-align: center; */
+    font-weight: bold;
+    /* font-size: 1.2rem; */
+    display: block; 
+    padding-left: 5px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
+    font-size: 0.75rem; /* 12px; */
+}
+
+.h6-accordion-button {
+    font-size: 0.95rem; /*15.2px; with html font-size = 16px*/
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.sub-button {
+    background: rgba(255,245,15,0.3) !important;
+}
+
+.accordion-button::after {
+    background-image: none;
+    width: 0;
+}
+  
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    width: 0;
+}
+
+.hide-progressbar {
+    display: none;
+    height: 0;
+}
+
+.accordion-body > UL > LI {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.accordion-body > UL > LI:nth-child(odd) {
+    background: rgba(231,224,154,0.4)
+}
+
+.accordion-body > UL > LI:nth-child(even) {
+    background: rgba(128,128,128,0.4)
+}
+
+.list-group-item-action:nth-child(odd) {
+    background: rgba(231,224,154,0.4)
+}
+
+.list-group-item-action:nth-child(even) {
+    background: rgba(128,128,128,0.4)
+}
+
+.list-group-item-action.disabled {
+    background-color: #0066cc !important;
+    color:rgb(255,245,15) !important;
+}
+
+.blinkred {
+    animation: blinkRed 0.8s infinite step-end;
+}
+
+.blinkyellow {
+    animation: blinkYellow 0.8s infinite step-end;
+}
+
+.blinkgreen {
+    animation: blinkGreen 0.8s infinite step-end;
+}
+
+.disabled {
+    display: none !important;
+}
+
+@keyframes blinkRed {
+    100%,
+    0% {
+        fill: #0b0737;
+    }
+    60% {
+        fill: red;
+    }
+}
+
+
+@keyframes blinkYellow {
+    100%,
+    0% {
+        fill: #0b0737;
+    }
+    60% {
+        fill: yellow;
+    }
+}
+
+@keyframes blinkGreen {
+    100%,
+    0% {
+        fill: #0b0737;
+    }
+    60% {
+        fill: rgb(5, 201, 5);
+    }
+}
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    /* left:48%;top:40%; */
+    left:44vw;top:40%;
+
+    /* width:40px;height:40px; */
+    width:12vw;height:12vw;
+    
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+
+/* iPhone 7 (2016), iPhone 8 (2017), and iPhone SE (1st to 3rd gen) */
+@media screen and (device-aspect-ratio: 375/667) {
+    html, body {
+        width: 100vw;
+        height: 550px;
+    }
+    
+    .accoslide {
+        height: 290px;
+    }
+}
+
+/* iPhone X, iPhone Xs, iPhone 11 Pro, iPhone 12 Mini, and iPhone 13 Mini */
+@media screen and (device-aspect-ratio: 375/812) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
+
+/* iPhone 12, 12 Pro, 13, 13 Pro */
+@media screen and (device-aspect-ratio: 390/844) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
+
+/* iPhone 14 Pro, iPhone 15 and iPhone 15 Pro */
+@media screen and (device-aspect-ratio: 393/852) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
+
+/* For iPhone Xs Max, and iPhone 11 Pro Max */
+@media screen and (device-aspect-ratio: 414/896) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
+
+/* iPhone 12 Pro Max, iPhone 13 Pro Max, and iPhone 14 Plus */
+@media screen and (device-aspect-ratio: 428/926) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
+
+/* iPhone 14 Pro Max, iPhone 15 Plus and iPhone 15 Pro Max */
+@media screen and (device-aspect-ratio: 430/932) {
+    html, body {
+        width: 100vw;
+        height: 600px;
+    }
+}
