@@ -8,13 +8,21 @@ All browsers render Service Workers inactive after a certain period of time (5 s
 
 After this period of time, whatever service worker becomes inactive and no longer responds to any events or features such as timeouts and intervals.
 
-
 **Test-SW-Lifetime** is an extension created to test (on any browser) a method for *extending the life of a Service Worker indefinitely*.
 
+This repo contains, in different folders, the XCode projects for testing on Mac and iOS, as well as the extension to install and test in other browsers (Chromium and Firefox). 
 
-This repo contains, in different folders, the XCode projects for testing on Mac and iOS, as well as the extension to install and test in other browsers (Chromium and Firefox).
+For Chromium and Firefox copy the right `manifest.json` file from the `!Platforms` folder and paste it in the extension root before to install.
 
 **Note**: the extension code is identical for all browsers.
+
+
+
+###### How to use
+
+From time to time open the extension's popup and click the button to check if the Service Worker is still alive or death.
+
+
 
 ###### References
 
