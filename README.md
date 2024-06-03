@@ -6,7 +6,7 @@
 
 All browsers render Service Workers inactive after a certain period of time (5 seconds, 30 seconds, 5 minutes), which depends on the type of browser and its version.
 
-After this period of time, whatever service worker becomes inactive and no longer responds to any events or features such as timeouts and intervals.
+After this period of time, whatever service worker becomes inactive and could no longer respond to any events or internal features such as timeouts and intervals.
 
 **Test-SW-Lifetime** is an extension created to test (on any browser) a method for *extending the life of a Service Worker indefinitely*.
 
@@ -16,13 +16,9 @@ For Chromium and Firefox copy the right `manifest.json` file from the `!Platform
 
 **Note**: the extension code is identical for all browsers.
 
-
-
 ###### How to use
 
 From time to time open the extension's popup and click the button to check if the Service Worker is still alive or death.
-
-
 
 ###### References
 
